@@ -1,6 +1,12 @@
-Welcome to My LeetCode Problem Solving Repository
-Here, I have documented my journey in solving various problems from LeetCode. My aim is to not only provide a solution to each problem, but also to leave detailed comments on the code for future reference.
+# LeetCode Problem Solving 💻
 
-I believe that writing clean, readable and well-commented code is important in both personal growth and team collaboration. I hope that this repository serves as a helpful resource for both myself and others who are looking to improve their problem-solving skills.
+Welcome to my LeetCode Problem Solving repository, maintained by Raouf alaadin! 🎉
 
-So, join me on this learning journey and let's grow together! Cheers!
+Here, I showcase my solutions to various problems on [LeetCode](https://leetcode.com/raoufalaadin97/). I try my best to write clean and efficient code, with proper comments for better understanding and future reference.
+
+Feel free to use the code as reference or use it to understand the solution better. If you have any questions, suggestions or any feedback, please don't hesitate to reach out to me.
+
+Let's solve some problems together and improve our coding skills! 🚀
+
+Happy Coding! 💻
+
