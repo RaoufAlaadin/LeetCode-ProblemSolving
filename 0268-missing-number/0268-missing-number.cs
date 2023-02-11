@@ -4,24 +4,23 @@ public class Solution {
         int sumCorrect= 0; 
         int sumFalse = 0;
         
-        for (int i = 0; i <= nums.Length; i++)
-        {
-            sumCorrect += i;
-        }
-        
         for (int i = 0; i < nums.Length; i++)
         {
+            sumCorrect += i;
             sumFalse += nums[i];  
         }
         
+
         
-        return sumCorrect- sumFalse; 
+        
+        return sumCorrect + nums.Length - sumFalse; 
         
        
     }
 }
 
 
+    // Method-2
 //  HashSet<int> hashCheck = new HashSet<int>();
 //         int max = nums[0];
 
