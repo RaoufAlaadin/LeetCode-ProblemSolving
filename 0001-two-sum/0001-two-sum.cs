@@ -1,40 +1,40 @@
-public class Solution {
-    public int[] TwoSum(int[] nums, int target) {
+// public class Solution {
+//     public int[] TwoSum(int[] nums, int target) {
         
-        // int[] result = new int[2];  
+//         // int[] result = new int[2];  
         
-        var result = new List<int>(); 
+//         var result = new List<int>(); 
         
-        var numsDictionary = new Dictionary<int,int>(); 
+//         var numsDictionary = new Dictionary<int,int>(); 
         
-        for(int i = 0; i < nums.Length ; i++)
-        {
-            var elementComplement = target - nums[i]; 
-            if (numsDictionary.ContainsKey(elementComplement))
-            {
-                result.Add(i); 
+//         for(int i = 0; i < nums.Length ; i++)
+//         {
+//             var elementComplement = target - nums[i]; 
+//             if (numsDictionary.ContainsKey(elementComplement))
+//             {
+//                 result.Add(i); 
                 
-                //TryGetValue is safer than Indexer. 
-                // Indexer throws -> KeyNotFoundException
-                // While TryGetValue returns true/false boolen responce.
-                numsDictionary.TryGetValue(elementComplement,out int index);
+//                 //TryGetValue is safer than Indexer. 
+//                 // Indexer throws -> KeyNotFoundException
+//                 // While TryGetValue returns true/false boolen responce.
+//                 numsDictionary.TryGetValue(elementComplement,out int index);
                 
-                result.Add(index);
+//                 result.Add(index);
                 
-                return result.ToArray(); 
+//                 return result.ToArray(); 
 
-            }
-            else{
-               if (!numsDictionary.ContainsKey(nums[i])) {
-                    numsDictionary.Add(nums[i], i);
-                }
-            }
-        }
+//             }
+//             else{
+//                if (!numsDictionary.ContainsKey(nums[i])) {
+//                     numsDictionary.Add(nums[i], i);
+//                 }
+//             }
+//         }
         
-        return null;
+//         return null;
         
-    }
-}
+//     }
+// }
 
 
 
@@ -70,35 +70,35 @@ public class Solution {
 
 
 
-// public class Solution {
-//     public int[] TwoSum(int[] nums, int target) {
+public class Solution {
+    public int[] TwoSum(int[] nums, int target) {
         
-//         // int[] result = new int[2];  
+        // int[] result = new int[2];  
         
-//         var result = new List<int>(); 
+        var result = new List<int>(); 
         
-//         var numsSet = new HashSet<int>(); 
+        var numsSet = new HashSet<int>(); 
         
-//         for(int i = 0; i < nums.Length ; i++)
-//         {
-//             var elementComplement = target - nums[i]; 
-//             if (numsSet.Contains(elementComplement))
-//             {
-//                 result.Add(i); 
-//                 result.Add(Array.IndexOf(nums,elementComplement));
+        for(int i = 0; i < nums.Length ; i++)
+        {
+            var elementComplement = target - nums[i]; 
+            if (numsSet.Contains(elementComplement))
+            {
+                result.Add(i); 
+                result.Add(Array.IndexOf(nums,elementComplement));
                 
-//                 return result.ToArray(); 
+                return result.ToArray(); 
 
-//             }
-//             else{
-//                 numsSet.Add(nums[i]);
-//             }
-//         }
+            }
+            else{
+                numsSet.Add(nums[i]);
+            }
+        }
         
-//         return null;
+        return null;
         
-//     }
-// }
+    }
+}
 
 
 //draft 
