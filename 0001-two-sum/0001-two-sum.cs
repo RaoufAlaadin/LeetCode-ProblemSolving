@@ -20,7 +20,6 @@ public class Solution {
                 numsDictionary.TryGetValue(elementComplement,out int index);
                 
                 result.Add(index);
-                
                 return result.ToArray(); 
 
             }
@@ -86,11 +85,11 @@ public class Solution {
                             So not a good idea. 
     
     
-    
+
+        TestCase =>         [1,1,1,1,1,4,1,1,1,1,1,7,1,1,1,1,1]
+                            11
 
 
-[1,1,1,1,1,4,1,1,1,1,1,7,1,1,1,1,1]
-11
 
 */
 
