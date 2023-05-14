@@ -1,40 +1,40 @@
-// public class Solution {
-//     public int[] TwoSum(int[] nums, int target) {
+public class Solution {
+    public int[] TwoSum(int[] nums, int target) {
         
-//         // int[] result = new int[2];  
+        // int[] result = new int[2];  
         
-//         var result = new List<int>(); 
+        var result = new List<int>(); 
         
-//         var numsDictionary = new Dictionary<int,int>(); 
+        var numsDictionary = new Dictionary<int,int>(); 
         
-//         for(int i = 0; i < nums.Length ; i++)
-//         {
-//             var elementComplement = target - nums[i]; 
-//             if (numsDictionary.ContainsKey(elementComplement))
-//             {
-//                 result.Add(i); 
+        for(int i = 0; i < nums.Length ; i++)
+        {
+            var elementComplement = target - nums[i]; 
+            if (numsDictionary.ContainsKey(elementComplement))
+            {
+                result.Add(i); 
                 
-//                 //TryGetValue is safer than Indexer. 
-//                 // Indexer throws -> KeyNotFoundException
-//                 // While TryGetValue returns true/false boolen responce.
-//                 numsDictionary.TryGetValue(elementComplement,out int index);
+                //TryGetValue is safer than Indexer. 
+                // Indexer throws -> KeyNotFoundException
+                // While TryGetValue returns true/false boolen responce.
+                numsDictionary.TryGetValue(elementComplement,out int index);
                 
-//                 result.Add(index);
+                result.Add(index);
                 
-//                 return result.ToArray(); 
+                return result.ToArray(); 
 
-//             }
-//             else{
-//                if (!numsDictionary.ContainsKey(nums[i])) {
-//                     numsDictionary.Add(nums[i], i);
-//                 }
-//             }
-//         }
+            }
+            else{
+               if (!numsDictionary.ContainsKey(nums[i])) {
+                    numsDictionary.Add(nums[i], i);
+                }
+            }
+        }
         
-//         return null;
+        return null;
         
-//     }
-// }
+    }
+}
 
 
 
@@ -46,19 +46,46 @@
 
 /* Very Important 
 
-    as long as we need both the Element's indecies and values 
+    1- as long as we need both the Element's indecies and values 
     
-    You have to use a Dictionary. !!
+        You have to use a Dictionary. !!
+
+        As using a HashSet for this case will lead us to use 
+
+            ---> indexof() to get the element indecies from 
+                 The original nums array.
+
+                 this takes O(n) ( like a forloop).
+
+                 And being already in a for loop makes the resulting 
+                 Time complexity to be --> O(n^2) .. which is bad --x 
+                 
     
-    As using a HashSet for this case will lead us to use 
+    2- for hashset .Add() 
     
-        ---> indexof() to get the element indecies from 
-             The original nums array.
-             
-             this takes O(n) ( like a forloop).
-             
-             And being already in a for loop makes the resulting 
-             Time complexity to be --> O(n^2) .. which is bad --x 
+            --> returns false if the value is already in the set. 
+            
+                    That's really good :> 
+                    
+        for a dictionary .Add()
+        
+            --> It throws an exception --> really bad :< 
+
+                Solution: 
+
+                    Method(1) 
+                    
+                        --> Check if key exists first
+                            using .ContainsKey() before adding.
+                            
+                    Method(2)
+                    
+                        --> Use TryInsert(,) ... but the problem it's
+                            Only supported from .NET 6 and upward..
+                            
+                            So not a good idea. 
+    
+    
     
 
 
@@ -70,35 +97,35 @@
 
 
 
-public class Solution {
-    public int[] TwoSum(int[] nums, int target) {
+// public class Solution {
+//     public int[] TwoSum(int[] nums, int target) {
         
-        // int[] result = new int[2];  
+//         // int[] result = new int[2];  
         
-        var result = new List<int>(); 
+//         var result = new List<int>(); 
         
-        var numsSet = new HashSet<int>(); 
+//         var numsSet = new HashSet<int>(); 
         
-        for(int i = 0; i < nums.Length ; i++)
-        {
-            var elementComplement = target - nums[i]; 
-            if (numsSet.Contains(elementComplement))
-            {
-                result.Add(i); 
-                result.Add(Array.IndexOf(nums,elementComplement));
+//         for(int i = 0; i < nums.Length ; i++)
+//         {
+//             var elementComplement = target - nums[i]; 
+//             if (numsSet.Contains(elementComplement))
+//             {
+//                 result.Add(i); 
+//                 result.Add(Array.IndexOf(nums,elementComplement));
                 
-                return result.ToArray(); 
+//                 return result.ToArray(); 
 
-            }
-            else{
-                numsSet.Add(nums[i]);
-            }
-        }
+//             }
+//             else{
+//                 numsSet.Add(nums[i]);
+//             }
+//         }
         
-        return null;
+//         return null;
         
-    }
-}
+//     }
+// }
 
 
 //draft 
