@@ -2,8 +2,8 @@ public class Solution {
     public bool IsAnagram(string s, string t) {
         
         
-        // number of letters in Alphabate
-        // Arrays and the use of Alphabate ASCII code ---> (VeryImportant, Used alot) 
+        // number of letters in alphabet
+        // Arrays and the use of alphabet ASCII code ---> (VeryImportant, Used alot) 
         int[] CountOccuranceArray = new int[26]; 
 
         
