@@ -6,7 +6,7 @@ public class Solution {
         var EndIndex = s.Length - 1; 
         var Temp = 'x'; 
         
-        while(StartIndex <= EndIndex)
+        while(StartIndex < EndIndex)
         {
             Temp = s[StartIndex]; 
             s[StartIndex] = s[EndIndex];
