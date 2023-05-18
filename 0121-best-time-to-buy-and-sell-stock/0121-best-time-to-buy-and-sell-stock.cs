@@ -11,8 +11,6 @@ public class Solution {
             else if(MaxProfit < prices[i] - BuyPrice){
                 MaxProfit = prices[i] - BuyPrice; 
             }
-            
-            
         }
             
        return MaxProfit;  
