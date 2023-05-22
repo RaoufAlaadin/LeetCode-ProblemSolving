@@ -1,65 +1,24 @@
-// public class Solution {
-//     public int FindMin(int[] nums) {
-        
-        
-       
-//         var Left = 0; 
-//         var Right = nums.Length -1 ; 
-        
-        
-       
-        
-        
-        
-//         while ( Left < Right)
-//         {
-//              //This handles 2 cases:
-//             // 1- Array has 1 element `=`
-//             // 2- Array is completely sorted.
-//             if (nums[Left] <= nums[Right])
-//                 return nums[Left];
-        
-//             var Middle = (Right - Left)/ 2  + Left ; 
-            
-//             if ( nums[Middle]  > nums[Left])
-//                     Left = Middle + 1; 
-//             else
-//                     Right = Middle;
-//         }
-        
-//         return nums[Left];
-//     }
-// }
-
-
 public class Solution {
     public int FindMin(int[] nums) {
-        // Initialize left and right pointers
-        int left = 0, right = nums.Length - 1;
-
-        // Binary Search
-        while (left < right) {
-            // Calculate mid-point
-            int mid = left + (right - left) / 2;
-
-            // If mid-point element is greater than the last element
-            // of the array, then the minimum element must be in the
-            // right half of the array, so we update left pointer
-            if (nums[mid] > nums[right]) {
-                left = mid + 1;
-            } 
-            // Otherwise, the minimum element must be in the left half
-            // of the array, so we update right pointer
-            else {
-                right = mid;
-            }
+        
+        var Left = 0; 
+        var Right = nums.Length -1 ; 
+ 
+        while ( Left < Right)
+        {
+            var Middle = (Right - Left)/ 2  + Left ; 
+            
+            if ( nums[Middle]  > nums[Right])
+                    Left = Middle + 1; 
+            else
+                    Right = Middle;
         }
-
-        // At the end of the while loop, left pointer points to the
-        // minimum element of the array, which is the answer
-        return nums[left];
+        return nums[Left];
     }
 }
+
+
+
 
 
 
@@ -142,6 +101,14 @@ public class Solution {
                     
 
 
+
+//This handles 2 cases:
+            // 1- Array has 1 element `=`
+            // 2- Array is completely sorted.
+            if (nums[Left] <= nums[Right])
+                return nums[Left];
+                
+                
 */
 
 
